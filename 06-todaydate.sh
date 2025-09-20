@@ -3,3 +3,7 @@
 date
 
 echo $date
+
+echo $date
+
+
