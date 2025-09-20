@@ -1,6 +1,6 @@
 #!bin/bash
 
-date=$(date+%F)
+date=$(date + %F)
 
 echo $date
 
