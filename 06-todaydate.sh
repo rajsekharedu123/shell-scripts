@@ -1,9 +1,8 @@
 #!bin/bash
 
-date
+date =$(date)
 
 echo $date
 
-echo $date
 
 
