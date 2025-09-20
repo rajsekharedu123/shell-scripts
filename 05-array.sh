@@ -9,3 +9,5 @@ echo "the second element is " ${fruits[1]}
 
 echo "the firstthirsd element is " ${fruits[2]}
 
+echo "all the elemts in the array are " ${fruits[@]}
+
