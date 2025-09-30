@@ -4,6 +4,7 @@ USERID=$(id -u)
 if [ $USERID -ne 0 ]
 then 
     echo " pls loggin with sudo "
+    exit 1
 fi
 
 dnf list installed mysql
