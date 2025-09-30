@@ -6,4 +6,4 @@ echo " current working directory is $PWD "
 echo " current user home directory is $HOME "
 echo " PID is of the current script is $$ "
 sleep 100 &
-echo " PID is of the current script is $! "
+echo " PID is of the last shell cmd is $! "
