@@ -10,3 +10,9 @@ else
     echo " the given number is not equal to 20 "
 fi
 
+if [ $number -gt 20 ]
+then 
+    echo " the given number is greater then 20"
+else 
+    echo " the given nummber is less then 20"
+fi
