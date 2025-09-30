@@ -20,5 +20,5 @@ then
         echo "mysql is sucess"
     fi
 else
-echo "mysql is already installed ....installing now" 
+echo "mysql is already installed ...." 
 fi   
