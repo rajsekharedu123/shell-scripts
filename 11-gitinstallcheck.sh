@@ -8,3 +8,5 @@ then
 else
     echo " user logged in a root user" 
 fi
+
+echo "prgm continue"
