@@ -7,3 +7,4 @@ then
 else
     echo " user is a root user "
 fi
+
