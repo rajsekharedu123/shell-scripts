@@ -6,7 +6,7 @@ then
     echo " pls loggin with sudo "
 fi
 
-dnf installed mysql
+dnf list installed mysql
 
 if [ $? -ne 0 ]
 then 
