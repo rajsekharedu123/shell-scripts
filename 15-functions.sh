@@ -26,3 +26,6 @@ dnf install git -y
 
 vlaidate $? git-installation 
 
+dnf install mysql -y
+
+vlaidate $? mysql-installation 
