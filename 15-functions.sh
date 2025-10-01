@@ -15,6 +15,7 @@ vlaidate()
         echo " $2  cmd failed "
     else
         echo " $2  cmd sucess " 
+    fi    
 }
 
 dnf list installed git
