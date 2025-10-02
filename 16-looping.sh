@@ -11,6 +11,7 @@ check_root()
         exit 1
     fi   
 }
+
 validate_install()
 {
     if [ $1 -ne 0]
@@ -18,6 +19,7 @@ validate_install()
         echo "$2 installation failed"
     else
        echo "$2 installation sucessful" 
+    fi   
 }
 
 
