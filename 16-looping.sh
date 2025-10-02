@@ -1,6 +1,9 @@
 #!bin/bash
 USERID=$(id -u)
 
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 
 check_root()
@@ -16,7 +19,7 @@ validate_install()
 {
     if [ $1 -ne 0 ]
     then 
-        echo "$2 installation failed"
+        echo -e "$2 installation $R failed"
     else
        echo "$2 installation sucessful" 
     fi   
@@ -34,7 +37,7 @@ dnf list install $package
        dnf install $package -y
        validate_install $?  $package
     else
-        echo "$package is already installed"
+        echo -e "$package is already $G installed"
     fi
 done
 
