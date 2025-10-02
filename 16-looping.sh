@@ -34,7 +34,7 @@ dnf list install $package
        validate_install $?  $package
     else
         echo "$package is already installed"
-
+    fi
 done
 
 
