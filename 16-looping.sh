@@ -14,7 +14,7 @@ check_root()
 
 validate_install()
 {
-    if [ $1 -ne 0]
+    if [ $1 -ne 0 ]
     then 
         echo "$2 installation failed"
     else
