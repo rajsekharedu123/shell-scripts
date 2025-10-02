@@ -1,6 +1,6 @@
 #!bin/bash
 USERID=$(id -u)
-check_root
+
 
 
 check_root()
@@ -22,6 +22,7 @@ validate_install()
     fi   
 }
 
+check_root
 
 for package in $@
 do
