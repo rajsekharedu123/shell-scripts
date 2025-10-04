@@ -28,14 +28,20 @@ VALIDATE(){
 echo "$0 script started exceuting "
 CHECK_ROOT
 
-dnf install mysql-server -y
-VALIDATE $? "installation of mysql-server"
+dnf install mysql-server -y &>>$LOG_FILE
+VALIDATE $? "installation of mysql-server" 
 
-systemctl enable mysqld
+systemctl enable mysqld &>>$LOG_FILE
 VALIDATE $? "enabled mysql is "
 
-systemctl start mysqld
+systemctl start mysqld &>>$LOG_FILE
 VALIDATE $? "started mysql is "
 
+mysql -h 172.31.40.94 -u root -pExpenseApp@1 -e 'show databases;' &>>$LOG_FILE
+if [ $? -ne 0 ]
+then echo "password not set...setting now"
 mysql_secure_installation --set-root-pass ExpenseApp@1
 VALIDATE $? "set-root-pass is "
+else
+echo "password already set..."
+fi
