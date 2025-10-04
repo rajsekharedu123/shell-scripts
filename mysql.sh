@@ -19,9 +19,9 @@ CHECK_ROOT(){
 }
 VALIDATE(){
     if [ $1 -ne 0 ]
-    then echo -e "$R $2 FAILED $N"
+    then echo -e "$2 $R FAILED $N"
     else
-         echo -e "$G $2 PASS $N"  
+         echo -e "$2 $G PASS $N"  
     fi      
 }
 
