@@ -30,3 +30,6 @@ CHECK_ROOT
 
 dnf install mysql-server -y
 VALIDATE $? "installation of mysql-server"
+
+systemctl enable mysqld
+VALIDATE $? "enabled mysql is "
