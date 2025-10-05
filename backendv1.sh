@@ -32,14 +32,17 @@ VALIDATE(){
 CHECK_ROOT
 echo -e "$0 $G script started executing $N"
 
-dnf module disable nodejs -y &>>LOG_FILE
+dnf module disable nodejs -y &>>$LOG_FILE
 VALIDATE $? "disable nodejs" 
 
-dnf module enable nodejs:20 -y &>>LOG_FILE
+dnf module enable nodejs:20 -y &>>$LOG_FILE
 VALIDATE $? "denable nodejs:20"
 
-dnf install nodejs -y &>>LOG_FILE
+dnf install nodejs -y &>>$LOG_FILE
 VALIDATE $? "install nodejs"
 
-useradd expense
+useradd expense &>>$LOG_FILE
 VALIDATE $? "useradd expense"
+
+mkdir /app &>>$LOG_FILE
+VALIDATE $? "mkdir /app"
