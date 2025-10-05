@@ -51,6 +51,5 @@ VALIDATE $? "useradd expense"
 fi
 
 
-
-# mkdir /app &>>$LOG_FILE
-# VALIDATE $? "mkdir /app"
+mkdir -p /app &>>$LOG_FILE
+VALIDATE $? "creating app folder"
