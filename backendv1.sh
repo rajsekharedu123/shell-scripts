@@ -65,3 +65,7 @@ cd /app
 
 npm install
 VALIDATE $? "install dependencies software"
+
+cp /home/ec2-user/shell-scripts/backend.service  /etc/systemd/system/backend.service
+
+# load the data before running backend
