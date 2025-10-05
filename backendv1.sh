@@ -23,6 +23,7 @@ VALIDATE(){
     then echo "$2 fail"
     else
     echo "$2 pass" 
+    fi
 }
 
 CHECK_ROOT
