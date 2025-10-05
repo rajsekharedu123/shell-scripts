@@ -6,14 +6,14 @@ LOG_FILE="$LOGS_FOLDER/LOG_SCRIPT_NAME-TIMESTAMP.log"
 
 
 echo "$LOGS_FOLDER"
-echo "$LOG_SCRIPT_NAME"
+echo "$SCRIPT_NAME"
 echo "$TIMESTAMP"
 echo "$LOG_FILE"
 
 USERID=$(id -u)
 
 CHECK_ROOT(){
-    if [ $USERID -ne 0]
+    if [ $USERID -ne 0 ]
     then echo "please loggin with root/sudo"
     exit 1
     fi
