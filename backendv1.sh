@@ -41,6 +41,13 @@ VALIDATE $? "denable nodejs:20"
 dnf install nodejs -y &>>$LOG_FILE
 VALIDATE $? "install nodejs"
 
+id expense &>>$LOG_FILE
+if [ $? -eq 0 ] 
+then echo -e " expense user already present" | tee -a $LOG_FILE
+else
+echo -e " expense user not present creating now" | tee -a $LOG_FILE
+fi
+
 useradd expense &>>$LOG_FILE
 VALIDATE $? "useradd expense"
 
