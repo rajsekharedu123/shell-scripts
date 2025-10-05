@@ -40,3 +40,6 @@ VALIDATE $? "denable nodejs:20"
 
 dnf install nodejs -y &>>LOG_FILE
 VALIDATE $? "install nodejs"
+
+useradd expense
+VALIDATE $? "useradd expense"
