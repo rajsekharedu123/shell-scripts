@@ -2,8 +2,8 @@
 LOGS_FOLDER="/var/log/expense"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date date +%Y-%m-%d-%H-%M-%S)
-LOG_FILE="$LOGS_FOLDER/LOG_SCRIPT_NAME-TIMESTAMP.log"
-
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
+mkdir -p $LOGS_FOLDER
 
 echo "$LOGS_FOLDER"
 echo "$SCRIPT_NAME"
