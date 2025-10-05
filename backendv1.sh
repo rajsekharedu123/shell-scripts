@@ -20,9 +20,9 @@ CHECK_ROOT(){
 }
 VALIDATE(){
     if [ $1 -ne 0 ]
-    then echo "$2 fail"
+    then echo "$2 fail" | tee -a $LOG_FILE
     else
-    echo "$2 pass" 
+    echo "$2 pass" | tee -a $LOG_FILE
     fi
 }
 
