@@ -30,13 +30,13 @@ VALIDATE(){
 }
 
 CHECK_ROOT
-echo -e "$0 $G script started executing $N"
+echo -e "$0 $G script started executing $N" | tee -a $LOG_FILE
 
 dnf module disable nodejs -y &>>$LOG_FILE
 VALIDATE $? "disable nodejs" 
 
 dnf module enable nodejs:20 -y &>>$LOG_FILE
-VALIDATE $? "denable nodejs:20"
+VALIDATE $? "enable nodejs:20"
 
 dnf install nodejs -y &>>$LOG_FILE
 VALIDATE $? "install nodejs"
