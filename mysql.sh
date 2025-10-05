@@ -13,15 +13,15 @@ USERID=$(id -u)
 
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
-    then echo "please loggin with root/use sudo"
+    then echo "please loggin with root/use sudo" | tee -a &>>$LOG_FILE
     exit 1
     fi
 }
 VALIDATE(){
     if [ $1 -ne 0 ]
-    then echo -e "$2 $R FAILED $N"
+    then echo -e "$2 $R FAILED $N" | tee -a &>>$LOG_FILE
     else
-         echo -e "$2 $G PASS $N"  
+         echo -e "$2 $G PASS $N"  | tee -a &>>$LOG_FILE
     fi      
 }
 
@@ -37,7 +37,7 @@ VALIDATE $? "enabled mysql is "
 systemctl start mysqld &>>$LOG_FILE
 VALIDATE $? "started mysql is "
 
-mysql -h 172.31.40.94 -u root -pExpenseApp@1 -e 'show databases;' &>>$LOG_FILE
+mysql -h mysql.gaws81s.icu -u root -pExpenseApp@1 -e 'show databases;' &>>$LOG_FILE
 if [ $? -ne 0 ]
 then echo "password not set...setting now"
 mysql_secure_installation --set-root-pass ExpenseApp@1
