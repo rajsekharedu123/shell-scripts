@@ -46,10 +46,11 @@ if [ $? -eq 0 ]
 then echo -e " expense user already present" | tee -a $LOG_FILE
 else
 echo -e " expense user not present creating now" | tee -a $LOG_FILE
-fi
-
 useradd expense &>>$LOG_FILE
 VALIDATE $? "useradd expense"
+fi
 
-mkdir /app &>>$LOG_FILE
-VALIDATE $? "mkdir /app"
+
+
+# mkdir /app &>>$LOG_FILE
+# VALIDATE $? "mkdir /app"
