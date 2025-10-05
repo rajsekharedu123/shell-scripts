@@ -35,5 +35,5 @@ echo -e "$0 $G script started executing $N"
 dnf module disable nodejs -y &>>LOG_FILE
 VALIDATE $? "disable nodejs" 
 
-#dnf module enable nodejs:20 -y
-#VALIDATE $? "denable nodejs:20"
+dnf module enable nodejs:20 -y
+VALIDATE $? "denable nodejs:20"
