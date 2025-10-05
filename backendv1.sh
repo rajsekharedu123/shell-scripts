@@ -11,6 +11,9 @@ echo "$TIMESTAMP"
 echo "$LOG_FILE"
 
 USERID=$(id -u)
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
@@ -20,16 +23,17 @@ CHECK_ROOT(){
 }
 VALIDATE(){
     if [ $1 -ne 0 ]
-    then echo "$2 fail" | tee -a $LOG_FILE
+    then echo "$2 $R fail $N" | tee -a $LOG_FILE
     else
-    echo "$2 pass" | tee -a $LOG_FILE
+    echo "$2 $G pass $N" | tee -a $LOG_FILE
     fi
 }
 
 CHECK_ROOT
+echo "$0 $G script started executing $N"
 
-dnf module disable nodejs -y
-VALIDATE $? "disable nodejs"
+dnf module disable nodejs -y &>>LOG_FILE
+VALIDATE $? "disable nodejs" 
 
 #dnf module enable nodejs:20 -y
 #VALIDATE $? "denable nodejs:20"

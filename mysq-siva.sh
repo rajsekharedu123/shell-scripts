@@ -7,10 +7,10 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
 mkdir -p $LOGS_FOLDER
 
 USERID=$(id -u)
-R="\e[31m"
-G="\e[32m"
-N="\e[0m"
-Y="\e[33m"
+    R="\e[31m"
+    G="\e[32m"
+    N="\e[0m"
+    Y="\e[33m"
 
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
