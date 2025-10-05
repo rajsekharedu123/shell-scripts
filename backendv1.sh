@@ -53,3 +53,15 @@ fi
 
 mkdir -p /app &>>$LOG_FILE
 VALIDATE $? "creating app folder"
+
+curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOG_FILE
+VALIDATE $? "download software"
+
+cd /app
+rm -rf /app/*
+unzip /tmp/backend.zip &>>$LOG_FILE
+VALIDATE $? "unzip software"
+cd /app
+
+npm install
+VALIDATE $? "install dependencies software"
