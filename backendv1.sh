@@ -1,6 +1,6 @@
 #!bin/bash
 LOGS_FOLDER="/var/log/expense"
-LOG_SCRIPT_NAME=$($0 cut -d "." f1)
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE="$LOGS_FOLDER/LOG_SCRIPT_NAME-TIMESTAMP.log"
 
